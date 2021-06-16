@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
 import './App.css';
+import Spinner from './Spinner'
+import Data from './Data'
 
 function App() {
+  const AboutUs = React.lazy(() => import('./AboutUs'))
+  const Packages = React.lazy(() => import('./Packages'))
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Lonzo's Travel Agency</h1>
+      <h2>Make your travel dreams come true</h2>
+      <div className="contents">
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <AboutUs />
+          <Packages />
+          <Data />
+        </Suspense>
+      </div>
     </div>
   );
 }
