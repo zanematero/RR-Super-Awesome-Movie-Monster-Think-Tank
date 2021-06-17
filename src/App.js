@@ -1,23 +1,16 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import './App.css';
-import Spinner from './Spinner'
-import Data from './Data'
+import AboutUs from './AboutUs'
+import Packages from './Packages'
 
 function App() {
-  const AboutUs = React.lazy(() => import('./AboutUs'))
-  const Packages = React.lazy(() => import('./Packages'))
-
-
   return (
     <div className="App">
       <h1>Lonzo's Travel Agency</h1>
       <h2>Make your travel dreams come true</h2>
       <div className="contents">
-        <Suspense fallback={<h1>Loading...</h1>}>
           <AboutUs />
           <Packages />
-          <Data />
-        </Suspense>
       </div>
     </div>
   );
