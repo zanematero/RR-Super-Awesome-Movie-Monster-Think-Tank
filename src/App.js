@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import AboutUs from './AboutUs'
-import Packages from './Packages'
+import AboutUs from './components/AboutUs'
+import Packages from './components/Packages'
 
 function App() {
   return (
